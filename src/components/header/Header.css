@@ -1,0 +1,23 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content:space-between;
+    background-color: grey;
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-bottom: 20px;
+}
+
+.header-item {
+    display: flex;
+    background-color: green;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2px;
+    margin-right: 2px;
+    color: white
+}
+

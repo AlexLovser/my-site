@@ -1,11 +1,17 @@
 import './App.css';
+import Header from './components/header/Header';
+import { useSelector } from 'react-redux';
 
-function App() {
+
+export default function App() {
+  const {selectedValue} = useSelector(state => state.header)
+
   return (
-    <div className="App">
-      <h1>asdasd</h1>
-    </div>
+    <body className="container">
+        <Header />
+        <div>
+
+        </div>
+    </body>
   );
 }
-
-export default App;
