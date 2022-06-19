@@ -1,13 +1,18 @@
 import React from 'react';
 import './Header.css';
 import HeaderItem from './HeaderItem';
-import { useSelector } from 'react-redux/es/exports';
+import { useSelector } from 'react-redux';
 
 export default function Header() {
   const {allValues} = useSelector(state => state.header)
+
   return (
     <div className='header'>
-      {allValues.map(item => <HeaderItem title={item}/>)}
+      {
+        Object.keys(allValues).map(
+          k => <HeaderItem title={k} href={allValues[k]}/>
+        )
+      }
     </div>
   )
 }

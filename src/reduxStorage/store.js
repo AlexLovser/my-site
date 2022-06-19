@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import headerSlice from "./mainSlice";
+import headerSlice from "./headerSlice";
 
 
 export default configureStore({

@@ -12,12 +12,14 @@
 
 .header-item {
     display: flex;
-    background-color: green;
     width: 100%;
     align-items: center;
     justify-content: center;
     margin-left: 2px;
     margin-right: 2px;
-    color: white
+    color: white;
+    cursor: default;
+    text-decoration: none;
+    border-radius: 1ch
 }
 

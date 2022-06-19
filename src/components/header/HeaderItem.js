@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import './Header.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { setSelectedValue } from '../../reduxStorage/mainSlice';
+import { setSelectedValue } from '../../reduxStorage/headerSlice';
+import { NavLink } from 'react-router-dom';
 
-
-export default function HeaderItem({title}) {
+export default function HeaderItem({title, href}) {
   const [hovered, setHovered] = useState(false)
 
   const {selectedValue} = useSelector(state => state.header)
@@ -13,17 +13,19 @@ export default function HeaderItem({title}) {
   const onClick = () => dispatch(setSelectedValue(title))
 
   const hasSelected = selectedValue === title
-  const backgroundColor = hasSelected ? 'green' : (hovered ? 'yellow': 'purple')
+  const backgroundColor = hasSelected ? '#338EEA' : (hovered ? '#2873bf': '#c8fa00')
 
   return (
-    <div 
+    <NavLink 
       onMouseOver={() => setHovered(true)} 
       onMouseOut={() => setHovered(false)}
       className='header-item' 
       onClick={onClick} 
-      style={{backgroundColor}}
+      style={{'background-color': backgroundColor, background: 'linear-gradient(rgba(255, 255, 255, 0.5), transparent)'}}
+      to={href}
     >
       <h2>{title}</h2>
-    </div>
+    </NavLink>
+  
   )
 }

@@ -1,13 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    allValues: ['Обо мне', 'Моя работы', 'Мои соц.сети'],
+    allValues: {
+      'Обо мне': 'about',
+      'Моя работы': 'works',
+      'Мои соц.сети': 'networks'
+    },
+    selectedValue: 'Обо мне'
 }
-initialState.selectedValue = initialState.allValues[0]
-
 
 const headerSlice = createSlice({
-  name: 'main',
+  name: 'header',
   initialState,
   reducers: {
     setSelectedValue: (state, action) => {
